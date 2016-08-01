@@ -22,10 +22,15 @@ public class GrenadeExplosion : MonoBehaviour {
 
 		foreach (var coll in hitColliders) {
 			Debug.Log (coll.name);
-		
+			if (coll.GetComponent<NavMeshAgent>()) {
+				coll.GetComponent<NavMeshAgent> ().enabled = false;
+			}
 			if (coll.GetComponent<Rigidbody>() ) {
 				coll.GetComponent<Rigidbody> ().isKinematic = false;
 				coll.GetComponent<Rigidbody> ().AddExplosionForce(power,point,blastRadius,1,ForceMode.Impulse);
+				if (coll.CompareTag("Enemy")) {
+					Destroy (coll.gameObject,3);
+				}
 			}
 		}
 	}
