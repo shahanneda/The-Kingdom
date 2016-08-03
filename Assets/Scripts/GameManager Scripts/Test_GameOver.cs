@@ -12,7 +12,7 @@ namespace Main{
 		void Update () {
 			if (Input.GetKeyDown (KeyCode.O)) {
 				print ("Deducting");
-				player_master.CallEventPlayerHealthDeduction (20);
+				player_master.CallEventPlayerHealthDeduction (1);
 			}
 		}
 	}
