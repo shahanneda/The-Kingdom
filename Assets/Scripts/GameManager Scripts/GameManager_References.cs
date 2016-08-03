@@ -6,8 +6,12 @@ namespace Main{
 		public static string PlayerTag;
 		public string enemyTag;
 		public static string EnemyTag;
-		private static GameObject _player;
+		public static GameObject _player;
 		void OnEnable(){
+			
+			_player = GameObject.FindGameObjectWithTag (playerTag);
+			PlayerTag = playerTag;
+			EnemyTag = enemyTag;
 			if (playerTag == "") {
 				Debug.LogWarning ("Please type in name of player tag");
 			}
@@ -17,9 +21,6 @@ namespace Main{
 			if (!_player) {
 				Debug.LogWarning ("Please Link Player");
 			}
-			_player = GameObject.FindGameObjectWithTag (playerTag);
-			PlayerTag = playerTag;
-			EnemyTag = enemyTag;
 		}
 	}
 }

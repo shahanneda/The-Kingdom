@@ -6,7 +6,7 @@ namespace Main{
 		private GameManager_Master gameManager_Master;
 		private Player_Master player_master;
 		public int playerHealth;
-		public Text healthText;
+		public Slider HealthSlider;
 		 
 		void OnEnable(){
 			SetInitialReferences ();
@@ -25,24 +25,22 @@ namespace Main{
 		}
 		// Use this for initialization
 		void Start () {
-			StartCoroutine ("testHealthDeduction");
+			
 		}
 		
 		// Update is called once per frame
 		void Update () {
-		
-		}
-		IEnumerator testHealthDeduction(){
-			yield return new WaitForSeconds (4);
-			DeductHealth (100);
-
+			SetUI ();
+			print (playerHealth);
 		}
 		void DeductHealth(int healthChange){
-			playerHealth -= +healthChange;
+			playerHealth -= healthChange;
+			print ("Remvoding " + healthChange);
 			if (playerHealth <= 0) {
 				playerHealth = 0;
 
 				gameManager_Master.CallGameOverEvent ();
+
 			} 
 		}
 		void IncreaseHealth(int healthChange){
@@ -52,9 +50,10 @@ namespace Main{
 			}
 		}
 		void SetUI(){
-			if (healthText) {
-				healthText.text = playerHealth.ToString ();
+			if (HealthSlider) {
+				HealthSlider.value = playerHealth;
 			}
 		} 
+
 	}
 }
