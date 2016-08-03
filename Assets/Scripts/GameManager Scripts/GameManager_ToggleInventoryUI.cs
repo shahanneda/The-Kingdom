@@ -18,7 +18,7 @@ namespace Main{
 		void SetInitialReferences(){
 			gamemanager_master = GetComponent<GameManager_Master> ();
 		}
-		void ToggleInventoryUI(){
+		public void ToggleInventoryUI(){
 			if (inventoryUi != null) {
 				inventoryUi.SetActive (!inventoryUi.activeSelf);
 				gamemanager_master.isInventoryUiOn = !gamemanager_master.isInventoryUiOn;

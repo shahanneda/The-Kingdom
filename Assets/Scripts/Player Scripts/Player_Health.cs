@@ -31,11 +31,11 @@ namespace Main{
 		// Update is called once per frame
 		void Update () {
 			SetUI ();
-			print (playerHealth);
+
 		}
 		void DeductHealth(int healthChange){
 			playerHealth -= healthChange;
-			print ("Remvoding " + healthChange);
+
 			if (playerHealth <= 0) {
 				playerHealth = 0;
 
