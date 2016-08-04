@@ -14,7 +14,7 @@ namespace Main{
 		
 		}
 		public void PlayGame(){
-			print ("loading");
+			
 			SceneManager.LoadScene (1);
 
 		}

@@ -27,7 +27,6 @@ namespace Main{
 					i = 0;
 				}
 				r_color.a = i/100;
-				print (100 - player_health.playerHealth);
 
 				Redimage.color = r_color;
 			}

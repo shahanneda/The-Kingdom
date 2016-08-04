@@ -11,7 +11,7 @@ namespace Main{
 		// Update is called once per frame
 		void Update () {
 			if (Input.GetKeyDown (KeyCode.O)) {
-				print ("Deducting");
+				
 				player_master.CallEventPlayerHealthDeduction (1);
 			}
 		}

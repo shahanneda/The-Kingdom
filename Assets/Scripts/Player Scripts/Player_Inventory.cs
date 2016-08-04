@@ -10,7 +10,7 @@ namespace Main{
 
 		private Player_Master player_Master;
 		private GameManager_ToggleInventoryUI inventoryUiScript;
-		private float timeToPlaceInHands = 0.1f;
+		private float timeToPlaceInHands = 0.3f;
 		private Transform currentlyHeldItem;
 		private int counter;
 		private string buttonText;
@@ -48,7 +48,7 @@ namespace Main{
 					GameObject go = Instantiate (UiButton) as GameObject;
 					buttonText = child.name;
 					go.GetComponentInChildren<Text> ().text = buttonText;
-					print (buttonText);
+
 					int index = counter;
 					go.GetComponent<Button> ().onClick.AddListener (delegate {ActivateInventoryItem(index);	});
 					go.GetComponent<Button>().onClick.AddListener(inventoryUiScript.ToggleInventoryUI);

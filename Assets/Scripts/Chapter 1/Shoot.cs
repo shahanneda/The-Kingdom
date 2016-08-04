@@ -21,10 +21,10 @@ namespace Shahan
 		void CheckForInput(){
 			if (Input.GetButton("Fire1")&& Time.time>nextFire) {
 				nextFire = Time.time + fireRate;
-				print ("Hello");
+
 				Debug.DrawRay (transform.position,transform.forward,Color.red,3f);
 				if (Physics.Raycast(transform.TransformPoint(0,0,1),transform.forward,out Hit,range)){
-					print(Hit.collider.name);
+					
 
 				}
 				

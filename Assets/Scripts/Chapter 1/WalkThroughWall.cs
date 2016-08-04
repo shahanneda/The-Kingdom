@@ -18,7 +18,7 @@ namespace shahan
 			
 		}
 		public void SetNotSolid(){
-			print ("Hello");
+			
 			gameObject.layer = LayerMask.NameToLayer ("Not Solid");
 			gameObject.GetComponent<Renderer> ().material.SetColor ("_Color",myColor);
 		}

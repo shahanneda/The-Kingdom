@@ -21,10 +21,10 @@ namespace shahan
 		}
 		void DetectItems(){
 			if (Time.time > nextCheck) {
-				print ("Checking");
+				
 				nextCheck = Time.time + CheckRate;
 				if (Physics.Raycast(transform.position,transform.forward,out hit , range,detectionLayer)) {
-					Debug.Log ("This item is:" +  hit.transform.name);
+					
 				}
 			}
 		}

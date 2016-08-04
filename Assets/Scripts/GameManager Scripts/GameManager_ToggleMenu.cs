@@ -37,7 +37,7 @@ namespace Main
 		}
 		void CheckForMenuToggleRequests(){
 			if (Input.GetKeyUp(KeyCode.Escape) && !gamemanager_master.isGameOver && !gamemanager_master.isInventoryUiOn) {
-				print (gamemanager_master.isGameOver);
+				
 				ToggleMenu ();
 			}
 
