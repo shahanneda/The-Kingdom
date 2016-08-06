@@ -22,7 +22,7 @@ namespace Main{
 			if(player_health.playerHealth != 0 ){
 				Color r_color = Redimage.color;
 				float i = 100 - player_health.playerHealth;
-				i -= 50;
+				i -= 30;
 				if (i < 0) {
 					i = 0;
 				}
