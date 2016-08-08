@@ -19,7 +19,7 @@ namespace Main{
 			SetInitialReferences ();
 			UpdateInventoryListAndUI ();
 			CheckIfHandsEmpty ();
-
+			DeactivateAllInventoyItems ();
 			player_Master.EventInventoryChanged += UpdateInventoryListAndUI;
 			player_Master.EventInventoryChanged += CheckIfHandsEmpty;
 			player_Master.EventHandsEmpty += ClearHands;
