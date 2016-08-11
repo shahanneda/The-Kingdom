@@ -32,11 +32,11 @@ namespace Main{
 		}
 		void SetItemToThrowLayer(){
 			SetLayer (transform,itemThrowLayer);
-			print ("SetItemToThrowLayer");
+
 		}
 		void SetItemToPickupLayer(){
 			SetLayer (transform,itemPickupLayer);
-			print ("SetItemToPickupLayer");
+
 		}
 		void SetLayerOnEnable(){
 			if(itemPickupLayer == ""){
@@ -53,6 +53,7 @@ namespace Main{
 		}
 		void SetLayer(Transform tForm, string name){
 			tForm.gameObject.layer = LayerMask.NameToLayer (name);
+
 			foreach (Transform child in tForm) {
 				SetLayer (child,name);
 			}

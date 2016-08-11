@@ -33,7 +33,7 @@ namespace Main{
 		
 		}
 		void PauseNavMeshAgent(int dummy){
-			if (myAgent != null) {
+			if (myAgent != null && myAgent.enabled) {
 				myAgent.ResetPath ();
 				enemy_master.isNavPaused = true ;
 			

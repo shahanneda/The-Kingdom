@@ -22,11 +22,19 @@ namespace Main{
 		}
 
 		void SpawnDefaultEffect(Vector3 position, Transform transform){
-			Instantiate (DefaultHitEffect, position, Quaternion.identity);
+			Quaternion quatAngle = Quaternion.LookRotation (position);
+			Instantiate (DefaultHitEffect, position, quatAngle);
+			//Instantiate (DefaultHitEffect, position, Quaternion.identity);
 		}
 		void SpawnEnemyEffect(Vector3 position, Transform transform){
 			if (EnemyHitEffect != null) {
-				Instantiate (EnemyHitEffect, position, Quaternion.identity);
+				Quaternion quatAngle = Quaternion.LookRotation (position);
+
+
+			
+				Instantiate (EnemyHitEffect, position, quatAngle);
+
+				//Instantiate (EnemyHitEffect, position, Quaternion.identity);
 			}
 		}
 	}

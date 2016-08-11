@@ -38,6 +38,7 @@ namespace Main{
 			}
 		}
 		void CarryOutThrowActions(){
+			
 			throwDirection = myTransform.parent.forward;
 
 			myTransform.SetParent (null);
@@ -47,7 +48,7 @@ namespace Main{
 
 		}
 		void HurlItem(){
-			
+			myRigidbody.isKinematic = false;
 			myRigidbody.AddForce (throwDirection * ThrowForce, ForceMode.Impulse);
 		}
 

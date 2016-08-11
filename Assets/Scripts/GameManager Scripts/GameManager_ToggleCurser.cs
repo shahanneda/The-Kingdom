@@ -21,6 +21,8 @@ namespace Main{
 		void CheckIfCurserShouldBeLocked(){
 			if (isCurserLocked) {
 				Cursor.lockState = CursorLockMode.Locked;
+				Cursor.lockState = CursorLockMode.Locked;
+				Cursor.lockState = CursorLockMode.Locked;
 				Cursor.visible = false;
 			} else {
 				Cursor.lockState = CursorLockMode.None;

@@ -54,7 +54,7 @@ namespace Main{
 		}
 		bool RandomWanderTarget(Vector3 centre,float range,out Vector3 result){
 			Vector3 randomPoint = centre + Random.insideUnitSphere * WanderRange;
-			print (NavMesh.SamplePosition(randomPoint,out navHit,10f,NavMesh.AllAreas));
+
 			if (NavMesh.SamplePosition(randomPoint,out navHit,3.0f,NavMesh.AllAreas)) {
 				
 				result = navHit.position;

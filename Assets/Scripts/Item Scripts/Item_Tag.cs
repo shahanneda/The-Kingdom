@@ -9,7 +9,7 @@ namespace Main{
 		}
 		void SetTag(){
 			if (ItemTag == "") {
-				ItemTag = "UnTagged";
+				ItemTag = "Untagged";
 
 			}
 			transform.tag = ItemTag;

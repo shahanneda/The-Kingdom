@@ -18,7 +18,7 @@ namespace Main{
 		}
 
 		void SetInitialReferences(){
-			//animator = GetComponent<Animator> ();
+			animator = GetComponent<Animator> ();
 			item_master = GetComponent<Item_Master> ();
 		}
 

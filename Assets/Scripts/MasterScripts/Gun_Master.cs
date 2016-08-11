@@ -56,7 +56,7 @@ namespace Main{
 				EventAmmoChanged (CurrentAmmo,carriedAmmo);
 			}
 		}
-		public void CallEventAmmoChanged(float speed){
+		public void CallEventSpeedCaptured(float speed){
 			if (EventSpeedCaptured !=null) {
 				EventSpeedCaptured (speed);
 			}

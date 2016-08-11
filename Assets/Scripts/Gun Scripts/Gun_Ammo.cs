@@ -46,11 +46,11 @@ namespace Main{
 			if (GetComponent<Animator>()) {
 				animator = GetComponent<Animator> ();
 			}
-			if (transform.root.GetComponent<Player_Master> ()) {
-				player_master = transform.root.GetComponent<Player_Master> ();
+			if (GameManager_References._player.GetComponent<Player_Master> ()) {
+				player_master =GameManager_References._player.GetComponent<Player_Master> ();
 			}
-			if (transform.root.GetComponent<Player_AmmoBox>()) {
-				ammoBox = transform.root.GetComponent<Player_AmmoBox> ();
+			if (GameManager_References._player.GetComponent<Player_AmmoBox>()) {
+				ammoBox = GameManager_References._player.GetComponent<Player_AmmoBox> ();
 			}
 
 
@@ -62,7 +62,7 @@ namespace Main{
 			StartCoroutine(UpdateAmmoUiWhenEnabling());
 
 			if (player_master != null) {
-				player_master.EventAmmoChanged -= UiAmmoUpdateRequast;
+				player_master.EventAmmoChanged += UiAmmoUpdateRequast;
 			}
 
 		}

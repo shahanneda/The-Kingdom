@@ -8,6 +8,9 @@ namespace Main{
 			SetInitialReferences();
 			item_master.EventObjectThrow += DisableMyMyUi;
 			item_master.EventObjectPickup += EnableMyMyUi;
+			if (transform.root.CompareTag(GameManager_References.PlayerTag)) {
+				EnableMyMyUi ();
+			}
 		}
 
 		void OnDisable(){
