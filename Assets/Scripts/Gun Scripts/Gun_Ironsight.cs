@@ -17,11 +17,15 @@ namespace Main
 		void OnEnable () 
 		{
 			SetInitialReferences ();
+
 		
 		}
 		void Start(){
 			normalPosition = GetComponent<Item_SetPosition> ().item_Local_Position;
 			//SetInitialReferences ();
+		}
+		void OnDisable(){
+			Reset ();
 		}
 		void SetInitialReferences(){
 			if (transform.root.CompareTag(GameManager_References.PlayerTag)) {
@@ -45,7 +49,10 @@ namespace Main
 	
 		void Update () 
 		{
-			if (transform.root.CompareTag(GameManager_References.PlayerTag)) {
+			if (gun_master.isReloading) {
+				Reset ();
+			}
+			if (transform.root.CompareTag(GameManager_References.PlayerTag) && gameObject.activeSelf == true) {
 				//if (Input.GetMouseButton(1))
 				if (Input.GetButton(buttonName) || Input.GetButton(button2Name)  )
 
@@ -61,18 +68,22 @@ namespace Main
 				}
 				else
 				{
-					weaponGameObject.transform.localPosition = Vector3.Lerp(weaponGameObject.transform.localPosition, normalPosition, Time.deltaTime * 8);
-					weaponCam.fieldOfView = Mathf.Lerp(weaponCam.fieldOfView, 60, Time.deltaTime * 10);
-					Camera.main.fieldOfView = Mathf.Lerp(weaponCam.fieldOfView, 60, Time.deltaTime * 10);
-					if (fpsController != null) {
-						fpsController.m_RunSpeed = NormalRunSpeed;
-						fpsController.m_WalkSpeed = normalWalkSpeed;
-					}
-
+					
+					Reset ();
 				}
 			}
             
         }
+
+		void Reset(){
+			weaponGameObject.transform.localPosition = Vector3.Lerp(weaponGameObject.transform.localPosition, normalPosition, Time.deltaTime * 8);
+			weaponCam.fieldOfView = Mathf.Lerp(weaponCam.fieldOfView, 60, Time.deltaTime * 10);
+			Camera.main.fieldOfView = Mathf.Lerp(weaponCam.fieldOfView, 60, Time.deltaTime * 10);
+			if (fpsController != null) {
+				fpsController.m_RunSpeed = NormalRunSpeed;
+				fpsController.m_WalkSpeed = normalWalkSpeed;
+			}
+		}
 	}
 }
 

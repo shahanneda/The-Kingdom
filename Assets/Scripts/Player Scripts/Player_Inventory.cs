@@ -44,7 +44,9 @@ namespace Main{
 			ClearInventoryUI ();
 			foreach (Transform child in InventoryPlayerParent) {
 				if (child.CompareTag ("Item")) {
+					print (child.name);
 					listInventory.Add (child);
+
 					GameObject go = Instantiate (UiButton) as GameObject;
 					buttonText = child.name;
 					go.GetComponentInChildren<Text> ().text = buttonText;
